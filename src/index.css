@@ -1,0 +1,235 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  header {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0;
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .header-content h1 {
+    margin: 0;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-left: 20px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .hero {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .hero .carousel-inner {
+    height: 500px;
+  }
+  
+  .hero .carousel-item {
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+  
+  .hero-content h2 {
+    margin: 0;
+    font-size: 2.5em;
+  }
+  
+  .hero-content p {
+    font-size: 1.2em;
+  }
+  
+  .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .search-bar {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .search-bar input,
+  .search-bar select {
+    padding: 10px;
+    margin-right: 10px;
+  }
+  
+  .search-bar button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .search-section {
+    padding: 20px;
+    background-color: #e0e0e0;
+    text-align: center;
+  }
+  
+  .search-section input,
+  .search-section select {
+    padding: 10px;
+    margin-right: 10px;
+  }
+  
+  .search-section button {
+    padding: 10px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .featured-vehicles {
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .featured-vehicles h2 {
+    margin: 0;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .vehicle-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .vehicle-card {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+  }
+  
+  .vehicle-card img {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+  }
+  
+  .vehicle-card h3 {
+    margin: 0;
+    color: #007bff;
+  }
+  
+  .vehicle-card p {
+    margin: 5px 0;
+  }
+  
+  .about {
+    padding: 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .about h2 {
+    margin: 0;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .about-content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .about-item {
+    max-width: 300px;
+    text-align: left;
+  }
+  
+  .about-item img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .about-item h3 {
+    margin: 0;
+  }
+  
+  .about-item p {
+    margin: 10px 0 0;
+  }
+  
+  footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .contact-info,
+  .social-media {
+    max-width: 500px;
+  }
+  
+  .social-media a {
+    display: block;
+    color: #007bff;
+    text-decoration: none;
+    margin: 5px 0;
+  }
+  
+  .carousel-caption {
+    bottom: 30%;
+  }
+  

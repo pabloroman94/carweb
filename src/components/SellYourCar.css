@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  header {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0;
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .header-content h1 {
+    margin: 0;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-left: 20px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  
+  .quote-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .quote-section h2 {
+    margin-top: 0;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group select,
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-group input[type="range"] {
+    width: calc(100% - 40px);
+    display: inline-block;
+  }
+  
+  .form-group output {
+    display: inline-block;
+    width: 40px;
+    text-align: right;
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #333;
+  }
+  
+  footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footer-section {
+    max-width: 33%;
+  }
+  
+  .footer-section h3 {
+    margin-top: 0;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-section.social-media a {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  

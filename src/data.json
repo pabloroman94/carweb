@@ -1,0 +1,85 @@
+{
+    "vehicles": [
+      {
+        "id": 1,
+        "name": "Fiat Strada",
+        "price": "$ 19.200.000",
+        "description": "Fiat Strada 1.6 ADVENTURE L/14",
+        "details": "70.000 | 2016 | Córdoba Capital",
+        "image": "https://via.placeholder.com/300x200"
+      },
+      {
+        "id": 2,
+        "name": "Chevrolet Trailblazer",
+        "price": "$ 18.000.000",
+        "description": "Chevrolet Trailblazer 2.8 4X4 LTZ L/14",
+        "details": "125.000 | 2018 | Córdoba Capital",
+        "image": "https://via.placeholder.com/300x200"
+      },
+      {
+        "id": 3,
+        "name": "Renault Duster",
+        "price": "$ 16.000.000",
+        "description": "Renault Duster 1.6 4X2 DYNAMIQUE L/15",
+        "details": "120.000 | 2017 | Córdoba Capital",
+        "image": "https://via.placeholder.com/300x200"
+      },
+      {
+        "id": 4,
+        "name": "Renault Stepway",
+        "price": "$ 11.200.000",
+        "description": "RENAULT STEPWAY Dynamique",
+        "details": "243.000 | 2016 | 3 Fotos | CONCORDIA",
+        "image": "https://via.placeholder.com/300x200"
+      },
+      {
+        "id": 5,
+        "name": "Volkswagen Suran",
+        "price": "$ 13.400.000",
+        "description": "VOLKSWAGEN SURAN Trendline",
+        "details": "116.000 | 2015 | 3 Fotos | CONCORDIA",
+        "image": "https://via.placeholder.com/300x200"
+      },
+      {
+        "id": 6,
+        "name": "Chevrolet Spin",
+        "price": "$ 18.500.000",
+        "description": "CHEVROLET SPIN LT SAS",
+        "details": "105.000 | 2018 | 3 Fotos | CRESPO",
+        "image": "https://via.placeholder.com/300x200"
+      },
+      {
+        "id": 7,
+        "name": "Fiat Siena",
+        "price": "$ 9.700.000",
+        "description": "FIAT SIENA EL",
+        "details": "183.000 | 2015 | 3 Fotos | CONCORDIA",
+        "image": "https://via.placeholder.com/300x200"
+      },
+      {
+        "id": 8,
+        "name": "Volkswagen Saveiro",
+        "price": "$ 20.500.000",
+        "description": "VOLKSWAGEN SAVEIRO Highline DC",
+        "details": "57.000 | 2021 | 3 Fotos | CONCORDIA",
+        "image": "https://via.placeholder.com/300x200"
+      },
+      {
+        "id": 9,
+        "name": "Peugeot 208",
+        "price": "$ 11.400.000",
+        "description": "PEUGEOT 208 Allure Touchscreen",
+        "details": "71.000 | 2014 | 3 Fotos | CONCORDIA",
+        "image": "https://via.placeholder.com/300x200"
+      },
+      {
+        "id": 10,
+        "name": "Citroën Berlingo",
+        "price": "$ 9.000.000",
+        "description": "CITROËN BERLINGO Furgon HDI Full",
+        "details": "240.000 | 2013 | 8 Fotos | CRESPO",
+        "image": "https://via.placeholder.com/300x200"
+      }
+    ]
+  }
+  

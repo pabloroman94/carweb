@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-content h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.featured-vehicles {
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.featured-vehicles h2 {
+    margin: 0;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.featured-vehicles p {
+    margin: 0 0 20px 0;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.vehicle-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+@media (min-width: 992px) {
+    .vehicle-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.vehicle-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.2s ease;
+    max-width: 350px;
+    width: 100%;
+}
+
+.vehicle-card:hover {
+    transform: scale(1.05);
+}
+
+.vehicle-card img {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+.vehicle-card h3 {
+    margin: 0;
+    color: #007bff;
+    font-size: 1.5em;
+}
+
+.vehicle-card p {
+    margin: 5px 0;
+}
+
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer .contact-info,
+.footer .social-media {
+    max-width: 500px;
+}
+
+.footer .social-media a {
+    display: block;
+    color: #007bff;
+    text-decoration: none;
+    margin: 5px 0;
+}
