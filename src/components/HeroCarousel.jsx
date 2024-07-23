@@ -1,31 +1,48 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import './HeroCarousel.css';
 
 function HeroCarousel() {
+  const [carouselItems, setCarouselItems] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const storedCarouselItems = JSON.parse(localStorage.getItem('carouselItems')) || [];
+    setCarouselItems(storedCarouselItems);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselItems.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? carouselItems.length - 1 : prevIndex - 1
+    );
+  };
+
+  if (carouselItems.length === 0) {
+    return <div>No hay elementos en el carrusel.</div>;
+  }
+
   return (
     <section className="hero">
-      <div className="carousel-inner">
-        <div className="carousel-item active" style={{ backgroundImage: "url('https://via.placeholder.com/1200x500')" }}>
-          <div className="hero-content">
-            <h2>Seguros</h2>
-            <p>Pensando en tu tranquilidad</p>
-            <a href="#" className="btn">Conocé más</a>
+      <div className="carousel-inner" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+        {carouselItems.map((item, index) => (
+          <div
+            key={item.id}
+            className={`carousel-item ${index === currentIndex ? 'active' : ''}`}
+            style={{ backgroundImage: `url(${item.imageUrl})` }}
+          >
+            <div className="hero-content">
+              <h2>{item.title}</h2>
+              <p>{item.description}</p>
+              <a href="#" className="btn">Conocé más</a>
+            </div>
           </div>
-        </div>
-        <div className="carousel-item" style={{ backgroundImage: "url('https://via.placeholder.com/1200x500')" }}>
-          <div className="hero-content">
-            <h2>Usados Seleccionados</h2>
-            <p>Más de 200 unidades en Stock</p>
-            <a href="#" className="btn">Conocé más</a>
-          </div>
-        </div>
-        <div className="carousel-item" style={{ backgroundImage: "url('https://via.placeholder.com/1200x500')" }}>
-          <div className="hero-content">
-            <h2>Encuentra tu Auto Ideal</h2>
-            <p>Con la mejor financiación</p>
-            <a href="#" className="btn">Conocé más</a>
-          </div>
-        </div>
+        ))}
       </div>
+      <a className="prev" onClick={prevSlide}>&#10094;</a>
+      <a className="next" onClick={nextSlide}>&#10095;</a>
     </section>
   );
 }

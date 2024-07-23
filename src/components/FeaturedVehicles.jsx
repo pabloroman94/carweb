@@ -7,7 +7,11 @@ function FeaturedVehicles() {
   useEffect(() => {
     fetch('/src/data.json')
       .then(response => response.json())
-      .then(data => setVehicles(data.vehicles));
+      .then(data => setVehicles(data.vehicles))
+      .catch(error => {
+        console.error('Error fetching vehicles:', error);
+        setVehicles([]);
+      });
   }, []);
 
   return (

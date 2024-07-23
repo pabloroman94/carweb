@@ -8,6 +8,8 @@ import AboutUs from './components/AboutUs';
 import SellYourCar from './components/SellYourCar'; // Importa el nuevo componente
 import ContactUs from './components/ContactUs';
 import Header from './components/Header';
+import CarouselABM from './components/CarouselABM'; // Importa el nuevo componente
+
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/sell-your-car" element={<SellYourCar />} /> {/* Nueva ruta */}
         <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/carousel-abm" element={<CarouselABM />} /> {/* Nueva ruta */}
       </Routes>
     </Router>
   );
