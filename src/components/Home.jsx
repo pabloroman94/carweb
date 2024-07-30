@@ -1,34 +1,59 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Header from './Header';
 import HeroCarousel from './HeroCarousel';
-import SearchSection from './SearchSection';
+import SearchAndCarousel from './SearchAndCarousel';
 import FeaturedVehicles from './FeaturedVehicles';
 import About from './About';
-import Footer from './Footer';
 
 function Home() {
   useEffect(() => {
-    const carouselItems = [
-      {
-        id: 1,
-        title: 'Seguros',
-        description: 'Pensando en tu tranquilidad',
-        imageUrl: 'https://via.placeholder.com/1200x500',
-      },
-      {
-        id: 2,
-        title: 'Usados Seleccionados',
-        description: 'Más de 200 unidades en Stock',
-        imageUrl: 'https://via.placeholder.com/1200x500',
-      },
-      {
-        id: 3,
-        title: 'Encuentra tu Auto Ideal',
-        description: 'Con la mejor financiación',
-        imageUrl: 'https://via.placeholder.com/1200x500',
-      },
-    ];
+    const carouselItems = {
+      'Concesionaria 1': [
+        'https://via.placeholder.com/1200x500',
+        'https://via.placeholder.com/1200x500',
+        'https://via.placeholder.com/1200x500'
+      ],
+      'Concesionaria 2': [
+        'https://via.placeholder.com/1200x500',
+        'https://via.placeholder.com/1200x500',
+        'https://via.placeholder.com/1200x500'
+      ],
+      'Concesionaria 3': [
+        'https://via.placeholder.com/1200x500',
+        'https://via.placeholder.com/1200x500',
+        'https://via.placeholder.com/1200x500'
+      ],
+      'Concesionaria 4': [
+        'https://via.placeholder.com/1200x500',
+        'https://via.placeholder.com/1200x500',
+        'https://via.placeholder.com/1200x500'
+      ],
+      'Concesionaria 5': [
+        'https://via.placeholder.com/1200x500',
+        'https://via.placeholder.com/1200x500',
+        'https://via.placeholder.com/1200x500'
+      ],
+      'Concesionaria 6': [
+        'https://via.placeholder.com/1200x500',
+        'https://via.placeholder.com/1200x500',
+        'https://via.placeholder.com/1200x500'
+      ],
+      'Concesionaria 7': [
+        'https://via.placeholder.com/1200x500',
+        'https://via.placeholder.com/1200x500',
+        'https://via.placeholder.com/1200x500'
+      ],
+      'Concesionaria 8': [
+        'https://via.placeholder.com/1200x500',
+        'https://via.placeholder.com/1200x500',
+        'https://via.placeholder.com/1200x500'
+      ],
+      'Concesionaria 9': [
+        'https://via.placeholder.com/1200x500',
+        'https://via.placeholder.com/1200x500',
+        'https://via.placeholder.com/1200x500'
+      ]
+    };
 
     if (!localStorage.getItem('carouselItems')) {
       localStorage.setItem('carouselItems', JSON.stringify(carouselItems));
@@ -37,12 +62,10 @@ function Home() {
 
   return (
     <div>
-      <Header />
       <HeroCarousel />
-      <SearchSection />
+      <SearchAndCarousel />
       <FeaturedVehicles />
       <About />
-      <Footer />
       <nav>
         <ul>
           <li><Link to="/all-featured-vehicles">Ver Vehículos Destacados</Link></li>

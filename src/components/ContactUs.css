@@ -49,7 +49,9 @@ main {
 .contact-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .contact-form {
@@ -58,51 +60,93 @@ main {
 }
 
 .contact-form h2 {
-    margin-top: 0;
+    margin-bottom: 20px;
 }
 
 .contact-form label {
     display: block;
-    margin: 10px 0 5px;
+    margin-bottom: 5px;
 }
 
-.contact-form input,
-.contact-form textarea,
-.contact-form select {
+.contact-form input, 
+.contact-form select, 
+.contact-form textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 4px;
 }
 
 .contact-form .captcha {
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 }
 
-.contact-form .captcha label {
-    margin-left: 10px;
+.contact-form .captcha input {
+    width: auto;
+    margin-right: 10px;
 }
 
 .contact-form button {
-    display: block;
-    width: 100%;
-    padding: 10px;
     background-color: #007bff;
     color: #fff;
+    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
 }
 
 .contact-info {
     flex: 1;
-    margin-left: 20px;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .contact-info h2 {
-    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.contact-info .ubicacion {
+    margin-bottom: 20px;
+}
+
+.contact-info .ubicacion input {
+    width: calc(50% - 10px);
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.contact-info .ubicacion button {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-info .ubicacion button:hover {
+    background-color: #c82333;
+}
+
+.contact-info button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-info button:hover {
+    background-color: #218838;
 }
 
 footer {
@@ -110,6 +154,8 @@ footer {
     color: #fff;
     padding: 20px 0;
     text-align: center;
+    width: 100%;
+    bottom: 0;
 }
 
 .footer-content {

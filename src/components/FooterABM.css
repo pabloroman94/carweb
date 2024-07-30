@@ -1,0 +1,52 @@
+form {
+    margin: 1em 0;
+  }
+  
+  form input, form textarea {
+    margin: 0.5em;
+    padding: 0.5em;
+    width: 300px;
+  }
+  
+  form button {
+    padding: 0.5em 1em;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin: 1em 0;
+  }
+  
+  ul li h4 {
+    display: inline;
+    margin-right: 1em;
+  }
+  
+  ul li button {
+    margin-left: 1em;
+    padding: 0.3em 0.6em;
+  }
+  
+  footer {
+    /* background-color: #f8f8f8; */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .contact-info, .social-media {
+    flex: 1;
+  }
+  
+  .contact-info p, .social-media a {
+    margin: 5px 0;
+  }
+  

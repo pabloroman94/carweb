@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Header from './Header';
-import Footer from './Footer';
 import './SellYourCar.css';
 
 const SellYourCar = () => {
@@ -8,7 +6,6 @@ const SellYourCar = () => {
 
   return (
     <div>
-      <Header />
       <main>
         <section className="quote-section">
           <h2>Cotizá tu usado</h2>
@@ -60,7 +57,6 @@ const SellYourCar = () => {
           </form>
         </section>
       </main>
-      <Footer />
     </div>
   );
 };

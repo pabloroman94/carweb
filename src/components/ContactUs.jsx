@@ -1,12 +1,35 @@
-import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import './ContactUs.css'; // Asegúrate de crear este archivo CSS para los estilos
+import React, { useEffect, useState } from 'react';
+import './ContactUs.css'; // Asegúrate de tener este archivo CSS
 
 function ContactUs() {
+  const [contactInfo, setContactInfo] = useState({
+    titulo: 'Dónde encontrarnos',
+    ubicaciones: [
+      {
+        nombre: 'Devoto',
+        direccion: 'Av. San Martín 6800',
+        ciudad: 'Capital Federal - Villa Devoto',
+        telefono: '1123577896',
+        horario: 'Lunes a Viernes de 09:00 a 19:00 Hs. Sábados de 10:00 a 19:00 Hs.',
+      },
+    ],
+  });
+
+  useEffect(() => {
+    try {
+      const storedContactInfo = JSON.parse(localStorage.getItem('contactInfo'));
+      if (storedContactInfo) {
+        setContactInfo(storedContactInfo);
+      }
+    } catch (error) {
+      console.error('Error parsing contactInfo from localStorage', error);
+      // Restablecer contactInfo en localStorage con valor por defecto si hay un error
+      localStorage.setItem('contactInfo', JSON.stringify(contactInfo));
+    }
+  }, []);
+
   return (
     <div>
-      <Header />
       <main>
         <section className="contact-container">
           <div className="contact-form">
@@ -35,17 +58,20 @@ function ContactUs() {
             <button type="submit">Enviar solicitud</button>
           </div>
           <div className="contact-info">
-            <h2>Dónde encontrarnos</h2>
-            <p><strong>DEVOTO</strong></p>
-            <p>Av. San Martín 6800</p>
-            <p>Capital Federal - Villa Devoto</p>
-            <p>Tel: 1123577896</p>
-            <p>Horario de Atención: Lunes a Viernes de 09:00 a 19:00 Hs. Sábados de 10:00 a 19:00 Hs.</p>
+            <h2>{contactInfo.titulo}</h2>
+            {contactInfo.ubicaciones.map((ubicacion, index) => (
+              <div key={index} className="ubicacion">
+                <p><strong>{ubicacion.nombre}</strong></p>
+                <p>{ubicacion.direccion}</p>
+                <p>{ubicacion.ciudad}</p>
+                <p>{ubicacion.telefono}</p>
+                <p>{ubicacion.horario}</p>
+              </div>
+            ))}
             <a href="#">Ver Ubicaciones y Teléfonos</a>
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 }

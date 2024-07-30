@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Header from './Header';
-import Footer from './Footer';
 import './VehicleDetail.css';
 
 const VehicleDetail = () => {
   const { id } = useParams();
   const [vehicle, setVehicle] = useState(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
@@ -14,6 +13,15 @@ const VehicleDetail = () => {
     const selectedVehicle = storedAutos.find(v => `${v.marca}-${v.modelo}` === id);
     setVehicle(selectedVehicle);
   }, [id]);
+
+  const moveSlide = (direction) => {
+    if (vehicle && vehicle.imageUrls) {
+      let newSlide = currentSlide + direction;
+      if (newSlide < 0) newSlide = vehicle.imageUrls.length - 1;
+      if (newSlide >= vehicle.imageUrls.length) newSlide = 0;
+      setCurrentSlide(newSlide);
+    }
+  };
 
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
@@ -24,31 +32,39 @@ const VehicleDetail = () => {
 
   return (
     <div>
-      <Header />
       <main>
         <section className="vehicle-detail">
           <div className="vehicle-image">
             <div className="carousel-container">
-              <div className="carousel-slide">
+              {vehicle.imageUrls && vehicle.imageUrls.length > 0 ? (
+                <div className="carousel">
+                  <button className="prev" onClick={() => moveSlide(-1)}>&#10094;</button>
+                  <img src={vehicle.imageUrls[currentSlide]} alt={vehicle.modelo} />
+                  <button className="next" onClick={() => moveSlide(1)}>&#10095;</button>
+                </div>
+              ) : (
                 <img src={vehicle.imageUrl} alt={vehicle.modelo} />
-              </div>
-              <a className="prev" onClick={() => moveSlide(-1)}>&#10094;</a>
-              <a className="next" onClick={() => moveSlide(1)}>&#10095;</a>
+              )}
             </div>
           </div>
           <div className="vehicle-info">
             <h2>{vehicle.marca} {vehicle.modelo}</h2>
             <p><strong>Año:</strong> {vehicle.anio} | <strong>Kms:</strong> {vehicle.kilometraje}</p>
             <h3>${vehicle.precio}</h3>
-            <p><strong>Combustible:</strong> {vehicle.combustible}</p>
-            <p><strong>Ubicación:</strong> {vehicle.ubicacion}</p>
-            <p><strong>Marca:</strong> {vehicle.marca}</p>
-            <p><strong>Modelo:</strong> {vehicle.modelo}</p>
-            <p><strong>Versión:</strong> {vehicle.version}</p>
-            <p><strong>Segmento:</strong> {vehicle.segmento}</p>
+            <p><strong>Motor:</strong> {vehicle.motor}</p>
+            <p><strong>Transmisión:</strong> {vehicle.transmision}</p>
+            <p><strong>Combustible:</strong> {vehicle.tipoCombustible}</p>
             <p><strong>Color:</strong> {vehicle.color}</p>
-            <p><strong>Comentarios:</strong> {vehicle.comentarios}</p>
-            <p><strong>Forma de pago:</strong> {vehicle.formaPago}</p>
+            <p><strong>Puertas:</strong> {vehicle.puertas}</p>
+            <p><strong>Hidráulica:</strong> {vehicle.hidraulica}</p>
+            <p><strong>Alarma:</strong> {vehicle.alarma}</p>
+            <p><strong>Airbag:</strong> {vehicle.airbag}</p>
+            <p><strong>Frenos ABS:</strong> {vehicle.frenosABS}</p>
+            <p><strong>Capacidad del Tanque:</strong> {vehicle.capacidadTanque} litros</p>
+            <p><strong>Llantas de Alineación:</strong> {vehicle.llantasAlineacion}</p>
+            <p><strong>Control de Tracción:</strong> {vehicle.controlTraccion}</p>
+            <p><strong>Descripción:</strong> {vehicle.descripcion}</p>
+            <p><strong>Detalles:</strong> {vehicle.detalles}</p>
             <button className="info-button" onClick={openModal}>Solicitar más información</button>
           </div>
         </section>
@@ -111,22 +127,6 @@ const VehicleDetail = () => {
           </table>
         </section>
       </main>
-      <footer>
-        <div className="footer-content">
-          <div className="contact-info">
-            <h3>Contacto</h3>
-            <p>Córdoba Capital: Av. Colón 4851 - Córdoba Capital (Córdoba) - (0800) 345-0439</p>
-            <p>Río Tercero: Hnos. Apez 481 - L.S.M - Río Tercero (Córdoba) - (0800) 345-0439</p>
-            <p>Villa Carlos Paz: Av. Sabattini 257 - Villa Carlos Paz (Córdoba) - (03541) 1568-5031</p>
-            <p>San Francisco: Av. Mitre 100 - San Francisco (Córdoba) - (0810) 555-0321</p>
-          </div>
-          <div className="social-media">
-            <h3>Redes Sociales</h3>
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-          </div>
-        </div>
-      </footer>
       {modalOpen && (
         <div id="myModal" className="modal" style={{ display: 'flex' }}>
           <div className="modal-content">

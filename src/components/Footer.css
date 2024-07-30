@@ -1,0 +1,47 @@
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+    width: 100%; /* Asegura que el footer ocupe todo el ancho */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.contact-info,
+.social-media {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px; /* Asegura que cada sección tenga un ancho mínimo */
+}
+
+.contact-info h3,
+.social-media h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.contact-info p,
+.social-media a {
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+.social-media a {
+    display: block;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.social-media a:hover {
+    text-decoration: underline;
+}

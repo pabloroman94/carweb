@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const brands = ['Fiat', 'Chevrolet', 'Renault', 'Volkswagen', 'Peugeot', 'Citroën'];
 const models = {
@@ -14,6 +14,12 @@ function SearchSection({ onSearch }) {
   const [selectedBrand, setSelectedBrand] = useState('');
   const [selectedModel, setSelectedModel] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
+  const [autos, setAutos] = useState([]);
+
+  useEffect(() => {
+    const storedAutos = JSON.parse(localStorage.getItem('autos')) || [];
+    setAutos(storedAutos);
+  }, []);
 
   const handleBrandChange = (e) => {
     setSelectedBrand(e.target.value);
@@ -34,7 +40,14 @@ function SearchSection({ onSearch }) {
       model: selectedModel,
       maxPrice: maxPrice,
     };
-    onSearch(criteria);
+    const filteredAutos = autos.filter(auto => {
+      return (
+        (criteria.brand ? auto.marca === criteria.brand : true) &&
+        (criteria.model ? auto.modelo === criteria.model : true) &&
+        (criteria.maxPrice ? parseFloat(auto.precio) <= parseFloat(criteria.maxPrice) : true)
+      );
+    });
+    onSearch(filteredAutos);
   };
 
   return (

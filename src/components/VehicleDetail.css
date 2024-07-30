@@ -170,7 +170,7 @@ main {
     border: 1px solid #ccc;
     text-align: left;
 }
-
+/* 
 footer {
     background-color: #000;
     color: #fff;
@@ -196,7 +196,7 @@ footer {
     color: #007bff;
     text-decoration: none;
     margin: 5px 0;
-}
+} */
 
 .modal {
     display: none;
