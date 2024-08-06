@@ -8,52 +8,53 @@ import About from './About';
 function Home() {
   useEffect(() => {
     const carouselItems = {
-      'Concesionaria 1': [
-        'https://via.placeholder.com/1200x500',
-        'https://via.placeholder.com/1200x500',
-        'https://via.placeholder.com/1200x500'
-      ],
-      'Concesionaria 2': [
-        'https://via.placeholder.com/1200x500',
-        'https://via.placeholder.com/1200x500',
-        'https://via.placeholder.com/1200x500'
-      ],
-      'Concesionaria 3': [
-        'https://via.placeholder.com/1200x500',
-        'https://via.placeholder.com/1200x500',
-        'https://via.placeholder.com/1200x500'
-      ],
-      'Concesionaria 4': [
-        'https://via.placeholder.com/1200x500',
-        'https://via.placeholder.com/1200x500',
-        'https://via.placeholder.com/1200x500'
-      ],
-      'Concesionaria 5': [
-        'https://via.placeholder.com/1200x500',
-        'https://via.placeholder.com/1200x500',
-        'https://via.placeholder.com/1200x500'
-      ],
-      'Concesionaria 6': [
-        'https://via.placeholder.com/1200x500',
-        'https://via.placeholder.com/1200x500',
-        'https://via.placeholder.com/1200x500'
-      ],
-      'Concesionaria 7': [
-        'https://via.placeholder.com/1200x500',
-        'https://via.placeholder.com/1200x500',
-        'https://via.placeholder.com/1200x500'
-      ],
-      'Concesionaria 8': [
-        'https://via.placeholder.com/1200x500',
-        'https://via.placeholder.com/1200x500',
-        'https://via.placeholder.com/1200x500'
-      ],
-      'Concesionaria 9': [
-        'https://via.placeholder.com/1200x500',
-        'https://via.placeholder.com/1200x500',
-        'https://via.placeholder.com/1200x500'
-      ]
-    };
+        'Autonova Pinamar': [
+          'https://via.placeholder.com/1200x500',
+          'https://via.placeholder.com/1200x500',
+          'https://via.placeholder.com/1200x500'
+        ],
+        'Motorspace Pinamar': [
+          'https://via.placeholder.com/1200x500',
+          'https://via.placeholder.com/1200x500',
+          'https://via.placeholder.com/1200x500'
+        ],
+        'Carzona Pinamar': [
+          'https://via.placeholder.com/1200x500',
+          'https://via.placeholder.com/1200x500',
+          'https://via.placeholder.com/1200x500'
+        ],
+        'Vehimundo Pinamar': [
+          'https://via.placeholder.com/1200x500',
+          'https://via.placeholder.com/1200x500',
+          'https://via.placeholder.com/1200x500'
+        ],
+        'Autoparadise Pinamar': [
+          'https://via.placeholder.com/1200x500',
+          'https://via.placeholder.com/1200x500',
+          'https://via.placeholder.com/1200x500'
+        ],
+        'Rodadictos Pinamar': [
+          'https://via.placeholder.com/1200x500',
+          'https://via.placeholder.com/1200x500',
+          'https://via.placeholder.com/1200x500'
+        ],
+        'Automax Pinamar': [
+          'https://via.placeholder.com/1200x500',
+          'https://via.placeholder.com/1200x500',
+          'https://via.placeholder.com/1200x500'
+        ],
+        'Motorealm Pinamar': [
+          'https://via.placeholder.com/1200x500',
+          'https://via.placeholder.com/1200x500',
+          'https://via.placeholder.com/1200x500'
+        ],
+        'Vehistars Pinamar': [
+          'https://via.placeholder.com/1200x500',
+          'https://via.placeholder.com/1200x500',
+          'https://via.placeholder.com/1200x500'
+        ]
+      };
+      
 
     if (!localStorage.getItem('carouselItems')) {
       localStorage.setItem('carouselItems', JSON.stringify(carouselItems));

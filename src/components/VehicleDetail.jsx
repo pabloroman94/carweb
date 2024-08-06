@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import QRCode from 'qrcode.react';
 import './VehicleDetail.css';
 
 const VehicleDetail = () => {
@@ -7,6 +8,7 @@ const VehicleDetail = () => {
   const [vehicle, setVehicle] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
+  const qrRef = React.createRef();
 
   useEffect(() => {
     const storedAutos = JSON.parse(localStorage.getItem('autos')) || [];
@@ -25,6 +27,17 @@ const VehicleDetail = () => {
 
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
+
+  const downloadQRCode = () => {
+    const canvas = qrRef.current.querySelector('canvas');
+    const pngUrl = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+    let downloadLink = document.createElement('a');
+    downloadLink.href = pngUrl;
+    downloadLink.download = 'qr_code.png';
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+  };
 
   if (!vehicle) {
     return <div>Cargando...</div>;
@@ -66,6 +79,10 @@ const VehicleDetail = () => {
             <p><strong>Descripción:</strong> {vehicle.descripcion}</p>
             <p><strong>Detalles:</strong> {vehicle.detalles}</p>
             <button className="info-button" onClick={openModal}>Solicitar más información</button>
+            <div className="qr-code" ref={qrRef}>
+              <QRCode value={window.location.href} size={128} />
+              <button onClick={downloadQRCode}>Descargar QR</button>
+            </div>
           </div>
         </section>
         <section className="similar-vehicles">

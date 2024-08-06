@@ -1,12 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import HeroCarousel from './HeroCarousel';
 
+const defaultCarouselItems = [
+  {
+    id: 1,
+    title: 'Autonova Pinamar',
+    description: 'La mejor concesionaria de Pinamar',
+    imageUrl: 'https://usadosautohaus.com/_red/autohaususados/userfiles/images/banners/01.webp'
+  },
+  {
+    id: 2,
+    title: 'Motorspace Pinamar',
+    description: 'Concesionaria de autos de lujo',
+    imageUrl: 'https://usadosautohaus.com/_red/autohaususados/userfiles/images/banners/02.webp'
+  },
+  {
+    id: 3,
+    title: 'Carzona Pinamar',
+    description: 'Gran variedad de autos',
+    imageUrl: 'https://usadosautohaus.com/_red/autohaususados/userfiles/images/banners/03.webp'
+  }
+];
+
 function CarouselABM() {
   const [carouselItems, setCarouselItems] = useState([]);
   const [form, setForm] = useState({ id: null, title: '', description: '', imageUrl: '' });
 
   useEffect(() => {
-    const storedItems = JSON.parse(localStorage.getItem('carouselItems')) || [];
+    const storedItems = JSON.parse(localStorage.getItem('carouselItems')) || defaultCarouselItems;
     setCarouselItems(storedItems);
   }, []);
 
@@ -72,6 +93,10 @@ function CarouselABM() {
         />
         <button type="submit">{form.id === null ? 'Agregar' : 'Modificar'}</button>
       </form>
+Flavio: copia y pega esta url como imagen: <br></br>
+https://usadosautohaus.com/_red/autohaususados/userfiles/images/banners/02.webp
+<br></br>
+https://usadosautohaus.com/_red/autohaususados/userfiles/images/banners/03.webp
 
       <h3>Elementos del Carrusel</h3>
       <ul>

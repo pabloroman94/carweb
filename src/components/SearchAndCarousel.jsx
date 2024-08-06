@@ -2,16 +2,17 @@ import React, { useState, useEffect } from 'react';
 import './SearchAndCarousel.css';
 
 const agencies = [
-  "Concesionaria 1",
-  "Concesionaria 2",
-  "Concesionaria 3",
-  "Concesionaria 4",
-  "Concesionaria 5",
-  "Concesionaria 6",
-  "Concesionaria 7",
-  "Concesionaria 8",
-  "Concesionaria 9"
-];
+    "Autonova Pinamar",
+    "Motorspace Pinamar",
+    "Carzona Pinamar",
+    "Vehimundo Pinamar",
+    "Autoparadise Pinamar",
+    "Rodadictos Pinamar",
+    "Automax Pinamar",
+    "Motorealm Pinamar",
+    "Vehistars Pinamar"
+  ];
+  
 
 function SearchAndCarousel() {
   const [searchTerm, setSearchTerm] = useState('');

@@ -1,14 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import './HeroCarousel.css';
 
-function HeroCarousel() {
-  const [carouselItems, setCarouselItems] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
+const defaultCarouselItems = [
+  {
+    id: 1,
+    title: 'Autonova Pinamar',
+    description: 'La mejor concesionaria de Pinamar',
+    imageUrl: 'https://usadosautohaus.com/_red/autohaususados/userfiles/images/banners/01.webp'
+  },
+  {
+    id: 2,
+    title: 'Motorspace Pinamar',
+    description: 'Concesionaria de autos de lujo',
+    imageUrl: 'https://usadosautohaus.com/_red/autohaususados/userfiles/images/banners/02.webp'
+  },
+  {
+    id: 3,
+    title: 'Carzona Pinamar',
+    description: 'Gran variedad de autos',
+    imageUrl: 'https://usadosautohaus.com/_red/autohaususados/userfiles/images/banners/03.webp'
+  }
+];
 
-  useEffect(() => {
-    const storedCarouselItems = JSON.parse(localStorage.getItem('carouselItems')) || [];
-    setCarouselItems(storedCarouselItems);
-  }, []);
+function HeroCarousel() {
+  const [carouselItems, setCarouselItems] = useState(() => {
+    const storedCarouselItems = JSON.parse(localStorage.getItem('carouselItems'));
+    return storedCarouselItems || defaultCarouselItems;
+  });
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselItems.length);

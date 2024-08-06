@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import QRCode from 'qrcode.react';
 
 function ABMAutos() {
   const [autos, setAutos] = useState([]);
@@ -22,6 +23,7 @@ function ABMAutos() {
     llantasAlineacion: '',
     controlTraccion: '',
     precio: '',
+    imageFiles: [null, null, null, null, null],
     imageUrls: ['', '', '', '', ''],
     descripcion: '',
     detalles: '',
@@ -45,13 +47,30 @@ function ABMAutos() {
     });
   };
 
-  const handleImageChange = (index, value) => {
+  const handleImageChange = (index, file) => {
+    const newImageFiles = [...form.imageFiles];
     const newImageUrls = [...form.imageUrls];
-    newImageUrls[index] = value;
-    setForm({
-      ...form,
-      imageUrls: newImageUrls,
-    });
+    newImageFiles[index] = file;
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        newImageUrls[index] = reader.result;
+        setForm({
+          ...form,
+          imageFiles: newImageFiles,
+          imageUrls: newImageUrls,
+        });
+      };
+      reader.readAsDataURL(file);
+    } else {
+      newImageUrls[index] = '';
+      setForm({
+        ...form,
+        imageFiles: newImageFiles,
+        imageUrls: newImageUrls,
+      });
+    }
   };
 
   const handleSubmit = (e) => {
@@ -84,6 +103,7 @@ function ABMAutos() {
       llantasAlineacion: '',
       controlTraccion: '',
       precio: '',
+      imageFiles: [null, null, null, null, null],
       imageUrls: ['', '', '', '', ''],
       descripcion: '',
       detalles: '',
@@ -121,6 +141,19 @@ function ABMAutos() {
       return auto;
     });
     setAutos(updatedAutos);
+  };
+
+  const downloadQRCode = (index) => {
+    const canvas = document.getElementById(`qrCanvas-${index}`);
+    const pngUrl = canvas
+      .toDataURL('image/png')
+      .replace('image/png', 'image/octet-stream');
+    let downloadLink = document.createElement('a');
+    downloadLink.href = pngUrl;
+    downloadLink.download = `qr_code_${index}.png`;
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
   };
 
   return (
@@ -202,11 +235,10 @@ function ABMAutos() {
         {form.imageUrls.map((url, index) => (
           <div style={styles.imageInputContainer} key={index}>
             <label style={styles.label}>
-              URL de la Imagen {index + 1}:
+              Imagen {index + 1}:
               <input
-                type="text"
-                value={url}
-                onChange={(e) => handleImageChange(index, e.target.value)}
+                type="file"
+                onChange={(e) => handleImageChange(index, e.target.files[0])}
                 style={styles.input}
               />
             </label>
@@ -248,6 +280,7 @@ function ABMAutos() {
               <th>Precio</th>
               <th>Descripción</th>
               <th>Detalles</th>
+              <th>QR</th>
               <th>Acciones</th>
             </tr>
           </thead>
@@ -285,6 +318,12 @@ function ABMAutos() {
                 <td>{auto.precio}</td>
                 <td>{auto.descripcion}</td>
                 <td>{auto.detalles}</td>
+                <td>
+                  <div>
+                    <QRCode id={`qrCanvas-${index}`} value={`https://example.com/autos/${index}`} size={64} />
+                    <button onClick={() => downloadQRCode(index)} style={styles.qrButton}>Descargar</button>
+                  </div>
+                </td>
                 <td>
                   <button onClick={() => handleEdit(index)} style={styles.editButton}>Editar</button>
                   <button onClick={() => handleDelete(index)} style={styles.deleteButton}>Eliminar</button>
@@ -363,6 +402,16 @@ const styles = {
     border: 'none',
     borderRadius: '5px',
     cursor: 'pointer',
+  },
+  qrButton: {
+    padding: '5px 10px',
+    backgroundColor: '#28a745',
+    color: '#fff',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
+    display: 'block',
+    marginTop: '10px',
   },
   imageInputContainer: {
     display: 'flex',

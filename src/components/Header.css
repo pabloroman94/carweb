@@ -1,44 +1,118 @@
-.header-content {
+header {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    background-color: #000;
-    color: #fff;
+    position: relative;
   }
   
-  .header-content h1 {
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 50px; /* Ajusta el tamaño del logo según tus necesidades */
+    height: auto;
+    margin-left: 10px; /* Espacio entre el logo y el texto */
+  }
+  
+  .title {
+    color: #fff; /* Asegúrate de que el texto sea blanco */
     margin: 0;
   }
   
-  .header-content h1 a {
+  .title a {
     color: #fff;
-    text-decoration: none;
+    text-decoration: none !important; /* Eliminar subrayado del enlace */
+    border: none !important; /* Asegurar que no haya borde */
   }
   
-  .header-content h1 a:hover {
-    text-decoration: underline;
+  .title a:hover {
+    text-decoration: none !important; /* Mantener sin subrayado al pasar el mouse */
+    border: none !important; /* Asegurar que no haya borde */
   }
   
-  nav ul {
+  .nav-menu {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-menu ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
   }
   
-  nav ul li {
+  .nav-menu ul li {
     margin-left: 20px;
   }
   
-  nav ul li a {
+  .nav-menu ul li a {
     color: #fff;
     text-decoration: none;
+    display: flex;
+    align-items: center;
   }
   
-  nav ul li a:hover {
+  .nav-menu ul li a:hover {
     text-decoration: underline;
+  }
+  
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .menu-bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background-color: #000;
+      z-index: 1000;
+    }
+  
+    .nav-menu.open {
+      display: flex;
+    }
+  
+    .nav-menu ul {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .nav-menu ul li {
+      width: 100%;
+      text-align: center;
+      margin: 10px 0;
+    }
+  
+    .menu-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto; /* Alinea el menú a la derecha */
+    }
   }
   

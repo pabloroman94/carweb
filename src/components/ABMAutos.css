@@ -1,41 +1,99 @@
-.carousel-container {
-    position: relative;
-    width: 100px; /* Ajusta el tamaño según sea necesario */
-    height: 100px; /* Ajusta el tamaño según sea necesario */
-    overflow: hidden;
+.abm-container {
+    padding: 20px;
+  }
+  
+  .abm-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .label {
+    margin-bottom: 10px;
+  }
+  
+  .input, .textarea {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  .textarea {
+    height: 100px;
+  }
+  
+  .button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-start;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .auto-image {
+    width: 100px;
+    height: auto;
+  }
+  
+  .edit-button, .delete-button, .qr-button {
+    padding: 5px 10px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .edit-button {
+    margin-right: 10px;
+    background-color: #28a745;
+  }
+  
+  .delete-button {
+    background-color: #dc3545;
+  }
+  
+  .qr-button {
+    background-color: #28a745;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .image-input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .thumbnail {
+    width: 50px;
+    height: auto;
+    margin-left: 10px;
   }
   
   .carousel {
     display: flex;
-    transition: transform 0.5s ease;
+    align-items: center;
   }
   
-  .carousel-slide {
-    min-width: 100%;
-    height: 100%;
-  }
-  
-  .carousel img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .carousel-prev, .carousel-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
+  .carousel-button {
+    background: none;
     border: none;
     cursor: pointer;
-  }
-  
-  .carousel-prev {
-    left: 0;
-  }
-  
-  .carousel-next {
-    right: 0;
+    font-size: 1.5em;
+    color: #007bff;
   }
   
